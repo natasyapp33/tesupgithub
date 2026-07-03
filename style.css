@@ -1,0 +1,70 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3dfcf !important;
+}
+
+/* Judul */
+h1 {
+  letter-spacing: 1px;
+  color: #c9829e !important;
+}
+
+/* Deskripsi */
+p {
+  color: #8b6f63;
+}
+
+/* Kartu Produk */
+.bg-white {
+  background-color: #fff5ec !important;
+  border: 2px solid #f0c9b8;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.bg-white:hover {
+  transform: translateY(-10px);
+  transition: 0.3s;
+  box-shadow: 0 15px 30px rgba(255, 105, 180, 0.25);
+}
+
+/* Harga */
+.text-orange-500 {
+  color: #c9829e !important;
+}
+
+/* Tombol */
+button {
+  border-radius: 15px !important;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:hover {
+  background-color: #c9829e !important;
+}
+
+/* Gambar */
+img {
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* Judul Produk */
+h3 {
+  color: #c9829e;
+  font-weight: bold;
+}
+
+/* Efek gambar */
+img {
+  transition: 0.3s;
+}
+
+img:hover {
+  transform: scale(1.05);
+}

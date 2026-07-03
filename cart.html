@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Keranjang - MeowMart</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="max-w-5xl mx-auto p-6">
+
+  <!-- Navbar -->
+  <nav class="bg-white p-5 rounded-2xl shadow mb-8 flex justify-between items-center">
+
+    <h2 class="text-2xl font-bold text-pink-400">
+      🐱 MeowMart
+    </h2>
+
+    <a href="index.html" class="text-gray-600">
+      Kembali Belanja
+    </a>
+
+  </nav>
+
+
+  <!-- Keranjang -->
+  <div class="bg-white rounded-2xl shadow p-8">
+
+    <h1 class="text-3xl font-bold mb-6 text-pink-400">
+      🛒 Keranjang Belanja
+    </h1>
+
+
+    <!-- Produk -->
+<div id="cart-items">
+
+</div>
+
+
+    <div class="flex justify-between text-xl font-bold">
+
+  <span>Total</span>
+
+  <span
+  id="total-harga"
+  class="text-pink-400">
+
+    Rp0
+
+  </span>
+
+</div>
+
+
+    <!-- Tombol -->
+    <a href="checkout.html">
+
+      <button class="mt-6 w-full py-3 rounded-xl text-white bg-pink-400 hover:bg-pink-500">
+
+        Lanjut Pembayaran 💳
+
+      </button>
+
+    </a>
+
+    <button
+onclick="kosongkanKeranjang()"
+class="mt-6 w-full py-3 rounded-xl text-white bg-red-500 hover:bg-red-600">
+
+🗑 Kosongkan Keranjang
+
+</button>
+
+  </div>
+
+
+<footer class="bg-pink-100 rounded-2xl p-6 mt-10 text-center">
+
+  <h3 class="text-xl font-bold text-pink-400">
+    🐱 MeowMart
+  </h3>
+
+  <p class="text-gray-600 mt-2">
+    Toko online kebutuhan kucing kesayangan kamu
+  </p>
+
+  <p class="text-gray-500 mt-3">
+    📞 08xxxxxxxxxx | ✉ meowmart@gmail.com
+  </p>
+
+  <p class="text-gray-400 mt-3">
+    © 2026 MeowMart
+  </p>
+
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout - MeowMart</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-pink-50">
+
+<div class="max-w-6xl mx-auto p-6">
+
+    <!-- Navbar -->
+
+    <nav class="bg-white rounded-2xl shadow-lg p-5 flex justify-between items-center mb-8">
+
+        <h2 class="text-3xl font-bold text-pink-400">
+            🐱 MeowMart
+        </h2>
+
+        <a href="index.html"
+        class="text-gray-600 hover:text-pink-400 font-semibold">
+
+            Home
+
+        </a>
+
+    </nav>
+
+    <h1 class="text-4xl font-bold text-center text-pink-400 mb-8">
+
+        💳 Checkout Pesanan
+
+    </h1>
+
+    <div class="grid lg:grid-cols-2 gap-8">
+
+        <!-- KOLOM KIRI -->
+
+        <div class="space-y-6">
+
+            <!-- Produk -->
+
+            <div class="bg-white rounded-2xl shadow-lg p-6">
+
+                <h2 class="text-xl font-bold mb-5">
+
+                    📦 Produk Pesanan
+
+                </h2>
+
+                <div id="produk-checkout">
+
+                </div>
+
+            </div>
+
+            <!-- Data Pembeli -->
+
+            <div class="bg-white rounded-2xl shadow-lg p-6">
+
+                <h2 class="text-xl font-bold mb-5">
+
+                    👤 Data Pembeli
+
+                </h2>
+
+                <input
+                id="nama"
+                type="text"
+                placeholder="Nama Lengkap"
+                class="w-full p-3 rounded-xl border mb-4 focus:outline-none focus:ring-2 focus:ring-pink-300">
+
+                <input
+                id="alamat"
+                type="text"
+                placeholder="Alamat Lengkap"
+                class="w-full p-3 rounded-xl border mb-4 focus:outline-none focus:ring-2 focus:ring-pink-300">
+
+                <input
+                id="telepon"
+                type="text"
+                placeholder="Nomor Telepon"
+                class="w-full p-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-pink-300">
+
+            </div>
+
+        </div>
+
+        <!-- KOLOM KANAN -->
+
+        <div class="space-y-6">
+
+            <!-- Pengiriman -->
+
+            <div class="bg-white rounded-2xl shadow-lg p-6">
+
+                <h2 class="text-xl font-bold mb-5">
+
+                    🚚 Pilih Pengiriman
+
+                </h2>
+
+                <label class="flex justify-between items-center border rounded-xl p-4 mb-3 cursor-pointer hover:bg-pink-50">
+
+                    <div>
+
+                        <input
+                        type="radio"
+                        name="shipping"
+                        value="15000"
+                        checked>
+
+                        Reguler
+
+                    </div>
+
+                    <span>
+
+                        Rp15.000
+
+                    </span>
+
+                </label>
+
+                <label class="flex justify-between items-center border rounded-xl p-4 mb-3 cursor-pointer hover:bg-pink-50">
+
+                    <div>
+
+                        <input
+                        type="radio"
+                        name="shipping"
+                        value="30000">
+
+                        Express
+
+                    </div>
+
+                    <span>
+
+                        Rp30.000
+
+                    </span>
+
+                </label>
+
+                <label class="flex justify-between items-center border rounded-xl p-4 cursor-pointer hover:bg-pink-50">
+
+                    <div>
+
+                        <input
+                        type="radio"
+                        name="shipping"
+                        value="50000">
+
+                        Instant
+
+                    </div>
+
+                    <span>
+
+                        Rp50.000
+
+                    </span>
+
+                </label>
+
+            </div>
+
+            <!-- Metode Pembayaran -->
+
+            <div class="bg-white rounded-2xl shadow-lg p-6">
+
+                <h2 class="text-xl font-bold mb-5">
+
+                    💳 Metode Pembayaran
+
+                </h2>
+
+                <label class="flex items-center gap-3 border rounded-xl p-4 mb-3 cursor-pointer hover:bg-pink-50">
+
+                    <input
+                    type="radio"
+                    name="payment"
+                    checked>
+
+                    📱 QRIS
+
+                </label>
+
+                <label class="flex items-center gap-3 border rounded-xl p-4 mb-3 cursor-pointer hover:bg-pink-50">
+
+                    <input
+                    type="radio"
+                    name="payment">
+
+                    🏦 Transfer Bank
+
+                </label>
+
+                <label class="flex items-center gap-3 border rounded-xl p-4 mb-3 cursor-pointer hover:bg-pink-50">
+
+                    <input
+                    type="radio"
+                    name="payment">
+
+                    💙 DANA
+
+                </label>
+
+                <label class="flex items-center gap-3 border rounded-xl p-4 mb-3 cursor-pointer hover:bg-pink-50">
+
+                    <input
+                    type="radio"
+                    name="payment">
+
+                    💜 OVO
+
+                </label>
+
+                <label class="flex items-center gap-3 border rounded-xl p-4 cursor-pointer hover:bg-pink-50">
+
+                    <input
+                    type="radio"
+                    name="payment">
+
+                    🚚 COD
+
+                </label>
+
+            </div>
+
+                        <!-- Voucher -->
+
+            <div class="bg-white rounded-2xl shadow-lg p-6">
+
+                <h2 class="text-xl font-bold mb-5">
+
+                    🎟 Voucher
+
+                </h2>
+
+                <div class="flex gap-3">
+
+                    <input
+                    id="voucher"
+                    type="text"
+                    placeholder="Contoh : MEOW10"
+                    class="flex-1 border rounded-xl p-3">
+
+                    <button
+                    id="btnVoucher"
+                    class="bg-pink-400 hover:bg-pink-500 text-white px-5 rounded-xl">
+
+                        Gunakan
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Ringkasan -->
+
+            <div class="bg-pink-100 rounded-2xl shadow-lg p-6">
+
+                <h2 class="text-xl font-bold mb-5">
+
+                    🧾 Ringkasan Pembayaran
+
+                </h2>
+
+                <div class="flex justify-between mb-3">
+
+                    <span>Subtotal</span>
+
+                    <span id="subtotal">
+
+                        Rp75.000
+
+                    </span>
+
+                </div>
+
+                <div class="flex justify-between mb-3">
+
+                    <span>Ongkir</span>
+
+                    <span id="ongkir">
+
+                        Rp15.000
+
+                    </span>
+
+                </div>
+
+                <div class="flex justify-between mb-3">
+
+                    <span>Diskon</span>
+
+                    <span id="diskon">
+
+                        Rp0
+
+                    </span>
+
+                </div>
+
+                <hr class="my-4">
+
+                <div class="flex justify-between text-2xl font-bold">
+
+                    <span>Total</span>
+
+                    <span
+                    id="total"
+                    class="text-pink-500">
+
+                        Rp90.000
+
+                    </span>
+
+                </div>
+
+                <button
+                id="btnBayar"
+                class="mt-6 w-full py-4 rounded-xl bg-gradient-to-r from-pink-400 to-pink-500 hover:scale-105 duration-300 text-white font-bold text-lg">
+
+                    🐾 Bayar Sekarang
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const produk = JSON.parse(localStorage.getItem("checkout"));
+
+let subtotal = 75000;
+
+if(produk){
+
+    subtotal = produk.harga;
+
+    document.getElementById("produk-checkout").innerHTML = `
+
+    <div class="bg-pink-50 rounded-2xl p-5">
+
+        <img src="${produk.gambar}"
+        class="w-40 h-40 object-contain mx-auto mb-4">
+
+        <h3 class="text-xl font-bold text-center">
+
+            ${produk.nama}
+
+        </h3>
+
+        <p class="text-center text-pink-500 font-bold mt-2">
+
+            Rp${produk.harga.toLocaleString("id-ID")}
+
+        </p>
+
+    </div>
+
+    `;
+
+}
+
+const subtotalText=document.getElementById("subtotal");
+const ongkirText=document.getElementById("ongkir");
+const diskonText=document.getElementById("diskon");
+const totalText=document.getElementById("total");
+
+subtotalText.innerHTML="Rp"+subtotal.toLocaleString("id-ID");
+
+let diskon=0;
+
+function hitungTotal(){
+
+let ongkir=Number(document.querySelector("input[name='shipping']:checked").value);
+
+let total=subtotal+ongkir-diskon;
+
+ongkirText.innerHTML="Rp"+ongkir.toLocaleString("id-ID");
+
+diskonText.innerHTML="-Rp"+diskon.toLocaleString("id-ID");
+
+totalText.innerHTML="Rp"+total.toLocaleString("id-ID");
+
+}
+
+document.querySelectorAll("input[name='shipping']").forEach(radio=>{
+
+radio.addEventListener("change",hitungTotal);
+
+});
+
+document.getElementById("btnVoucher").onclick=function(){
+
+if(document.getElementById("voucher").value=="MEOW10"){
+
+diskon=subtotal*0.1;
+
+alert("🎉 Voucher berhasil digunakan!");
+
+}else{
+
+diskon=0;
+
+alert("❌ Voucher tidak valid");
+
+}
+
+hitungTotal();
+
+}
+
+document.getElementById("btnBayar").onclick=function(){
+
+this.innerHTML="⏳ Memproses Pembayaran...";
+
+this.disabled=true;
+
+setTimeout(()=>{
+
+window.location.href="success.html";
+
+},2000);
+
+}
+
+hitungTotal();
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MeowMart - Toko Kucing Online</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+
+</head>
+
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="bg-[#FFFCFB] sticky top-0 z-50 shadow-md border-b border-pink-100">
+
+  <div class="max-w-7xl mx-auto px-5 py-4 flex flex-col md:flex-row items-center gap-4">
+
+    <!-- Logo -->
+    <h2 class="text-2xl font-bold text-[#E89BB2]">
+      🐱 MeowMart
+    </h2>
+
+    <!-- Search -->
+    <div class="w-full md:flex-1 md:px-8">
+      <input
+      id="search"
+      type="text"
+      placeholder="🔍 Cari produk favoritmu..."
+      onkeyup="cariProduk()"
+      class="w-full bg-white border border-pink-200 rounded-full px-5 py-3 focus:outline-none focus:border-[#E89BB2]">
+    </div>
+
+    <!-- Menu -->
+    <div class="flex gap-6 text-gray-600 font-medium">
+
+      <a href="index.html" class="hover:text-[#E89BB2] transition">
+        Home
+      </a>
+
+      <a href="#produk" class="hover:text-[#E89BB2] transition">
+        Produk
+      </a>
+
+      <a href="cart.html" class="hover:text-[#E89BB2] transition">
+        🛒 Keranjang
+      </a>
+
+    </div>
+
+  </div>
+
+</nav>
+
+<!-- BANNER -->
+<section class="max-w-7xl mx-auto px-5 py-8">
+
+<div class="bg-[#FFF8F8] rounded-3xl border border-pink-100 p-8 flex flex-col-reverse md:flex-row items-center gap-10">
+
+<div class="flex-1">
+
+<h1 class="text-4xl md:text-5xl font-bold text-[#E89BB2] mb-5">
+
+🐱 Semua Kebutuhan Kucing Ada Disini
+
+</h1>
+
+<p class="text-gray-500 leading-7">
+
+Temukan makanan, mainan, vitamin, dan perlengkapan terbaik untuk kucing kesayanganmu.
+
+</p>
+
+<a href="#produk"
+class="inline-block mt-8 bg-[#F4B7C8] hover:bg-[#ECA6BC] text-white px-8 py-3 rounded-full transition">
+
+Belanja Sekarang 🛒
+
+</a>
+
+</div>
+
+<div class="flex-1">
+
+<img src="images/kucing-banner.jpg"
+class="w-full max-w-md mx-auto object-contain">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SELAMAT DATANG -->
+<section class="max-w-7xl mx-auto px-5">
+
+<div class="bg-[#FFF8F8] rounded-3xl border border-pink-100 p-8 text-center">
+
+<h2 class="text-3xl font-bold text-[#E89BB2]">
+
+🐾 Selamat Datang di MeowMart
+
+</h2>
+
+<p class="text-gray-500 mt-3">
+
+Semua kebutuhan kucing kesayangan ada di sini 🐱
+
+</p>
+
+<a href="#produk"
+class="inline-block mt-6 bg-[#F4B7C8] hover:bg-[#ECA6BC] text-white px-8 py-3 rounded-full transition">
+
+Belanja Sekarang
+
+</a>
+
+<!-- KATEGORI -->
+<div class="flex flex-wrap justify-center gap-3 mt-8">
+
+<button onclick="filterProduk('semua')" class="bg-[#F4B7C8] text-white px-6 py-3 rounded-full">
+🐾 Semua
+</button>
+
+<button onclick="filterProduk('makanan')" class="bg-white border border-pink-200 text-[#E89BB2] px-6 py-3 rounded-full hover:bg-[#F4B7C8] hover:text-white transition">
+🐟 Makanan
+</button>
+
+<button onclick="filterProduk('mainan')" class="bg-white border border-pink-200 text-[#E89BB2] px-6 py-3 rounded-full hover:bg-[#F4B7C8] hover:text-white transition">
+🧸 Mainan
+</button>
+
+<button onclick="filterProduk('perawatan')" class="bg-white border border-pink-200 text-[#E89BB2] px-6 py-3 rounded-full hover:bg-[#F4B7C8] hover:text-white transition">
+🧴 Perawatan
+</button>
+
+<button onclick="filterProduk('vitamin')" class="bg-white border border-pink-200 text-[#E89BB2] px-6 py-3 rounded-full hover:bg-[#F4B7C8] hover:text-white transition">
+💊 Vitamin
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+    <!-- Judul -->
+    <h1 class="text-4xl font-bold mb-3 text-center text-orange-500">
+      🐱 MeowMart
+    </h1>
+
+    <p class="text-center text-gray-600 mb-8">
+      Toko online kebutuhan kucing kesayangan kamu
+    </p>
+
+
+    <!-- Produk -->
+<section id="produk" class="max-w-7xl mx-auto px-4 py-8">
+
+  <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- ================= PRODUK 1 ================= -->
+
+<div class="produk makanan bg-white rounded-3xl border border-pink-100 shadow-md hover:shadow-xl transition p-3">
+
+  <!-- Badge -->
+  <div class="flex justify-between items-center mb-2">
+
+    <span class="bg-pink-300 text-white text-[10px] md:text-xs px-2 py-1 rounded-full">
+      🔥 Best Seller
+    </span>
+
+    <button onclick="toggleLove(this)"
+    class="text-xl text-pink-400">
+      🤍
+    </button>
+
+  </div>
+
+  <!-- Gambar -->
+  <img src="images/makanan-kucing.jpg"
+  class="w-full aspect-square object-contain">
+
+  <!-- Nama -->
+  <h3 class="font-semibold text-sm md:text-lg mt-2 text-gray-700">
+    Makanan Kucing Premium
+  </h3>
+
+  <!-- Rating -->
+  <div class="text-yellow-400 text-xs md:text-sm mt-1">
+    ⭐⭐⭐⭐⭐
+    <span class="text-gray-400">(128)</span>
+  </div>
+
+  <!-- Deskripsi -->
+  <p class="hidden lg:block text-gray-500 text-sm mt-2">
+    Makanan premium bergizi tinggi untuk menjaga kesehatan dan pertumbuhan kucing.
+  </p>
+
+  <!-- Harga -->
+  <p class="text-pink-400 font-bold text-base md:text-2xl mt-2">
+    Rp75.000
+  </p>
+
+  <!-- Tombol -->
+  <div class="flex gap-2 mt-3">
+
+    <button
+    onclick="addToCart('Makanan Kucing Premium',75000)"
+    class="flex-1 bg-pink-300 hover:bg-pink-400 text-white rounded-xl py-2 text-xs md:text-base">
+
+      🛒
+      <span class="hidden md:inline"> Keranjang</span>
+
+    </button>
+
+    <button
+    onclick="beliSekarang('Makanan Kucing Premium',75000,'images/makanan-kucing.jpg')"
+    class="flex-1 bg-rose-100 hover:bg-rose-200 text-rose-600 rounded-xl py-2 text-xs md:text-base">
+
+      🛍️
+      <span class="hidden md:inline"> Beli</span>
+
+    </button>
+
+  </div>
+
+</div>
+
+<!-- ================= PRODUK 2 ================= -->
+
+<div class="produk perawatan bg-white rounded-3xl border border-pink-100 shadow-md hover:shadow-xl transition p-3">
+
+  <div class="flex justify-between items-center mb-2">
+
+    <span class="bg-sky-300 text-white text-[10px] md:text-xs px-2 py-1 rounded-full">
+      🆕 Baru
+    </span>
+
+    <button onclick="toggleLove(this)"
+    class="text-xl text-pink-400">
+      🤍
+    </button>
+
+  </div>
+
+  <img src="images/pasir-kucing.jpg"
+  class="w-full aspect-square object-contain">
+
+  <h3 class="font-semibold text-sm md:text-lg mt-2 text-gray-700">
+    Pasir Kucing Wangi
+  </h3>
+
+  <div class="text-yellow-400 text-xs md:text-sm mt-1">
+    ⭐⭐⭐⭐⭐
+    <span class="text-gray-400">(95)</span>
+  </div>
+
+  <p class="hidden lg:block text-gray-500 text-sm mt-2">
+    Pasir kucing yang cepat menggumpal dan mampu mengurangi bau tidak sedap.
+  </p>
+
+  <p class="text-pink-400 font-bold text-base md:text-2xl mt-2">
+    Rp45.000
+  </p>
+
+  <div class="flex gap-2 mt-3">
+
+    <button
+    onclick="addToCart('Pasir Kucing Wangi',45000)"
+    class="flex-1 bg-pink-300 hover:bg-pink-400 text-white rounded-xl py-2 text-xs md:text-base">
+
+      🛒
+      <span class="hidden md:inline"> Keranjang</span>
+
+    </button>
+
+    <button
+    onclick="beliSekarang('Pasir Kucing Wangi',45000,'images/pasir-kucing.jpg')"
+    class="flex-1 bg-rose-100 hover:bg-rose-200 text-rose-600 rounded-xl py-2 text-xs md:text-base">
+
+      🛍️
+      <span class="hidden md:inline"> Beli</span>
+
+    </button>
+
+  </div>
+
+</div>
+
+
+
+      <!-- ================= PRODUK 3 ================= -->
+
+<div class="produk aksesoris bg-white rounded-3xl border border-pink-100 shadow-md hover:shadow-xl transition p-3">
+
+  <div class="flex justify-between items-center mb-2">
+
+    <span class="bg-purple-300 text-white text-[10px] md:text-xs px-2 py-1 rounded-full">
+      ⭐ Recommended
+    </span>
+
+    <button onclick="toggleLove(this)"
+    class="text-xl text-pink-400">
+      🤍
+    </button>
+
+  </div>
+
+  <img src="images/kalung-kucing.jpg"
+  class="w-full aspect-square object-contain">
+
+  <h3 class="font-semibold text-sm md:text-lg mt-2 text-gray-700">
+    Kalung Kucing Lucu
+  </h3>
+
+  <div class="text-yellow-400 text-xs md:text-sm mt-1">
+    ⭐⭐⭐⭐⭐
+    <span class="text-gray-400">(210)</span>
+  </div>
+
+  <p class="hidden lg:block text-gray-500 text-sm mt-2">
+    Kalung kucing stylish dan ringan, nyaman dipakai sehari-hari.
+  </p>
+
+  <p class="text-pink-400 font-bold text-base md:text-2xl mt-2">
+    Rp30.000
+  </p>
+
+  <div class="flex gap-2 mt-3">
+
+    <button
+    onclick="addToCart('Kalung Kucing Lucu',30000)"
+    class="flex-1 bg-pink-300 hover:bg-pink-400 text-white rounded-xl py-2 text-xs md:text-base">
+      🛒 <span class="hidden md:inline">Keranjang</span>
+    </button>
+
+    <button
+    onclick="beliSekarang('Kalung Kucing Lucu',30000,'images/kalung-kucing.jpg')"
+    class="flex-1 bg-rose-100 hover:bg-rose-200 text-rose-600 rounded-xl py-2 text-xs md:text-base">
+      🛍️ <span class="hidden md:inline">Beli</span>
+    </button>
+
+  </div>
+
+</div>
+
+
+
+      <!-- ================= PRODUK 4 ================= -->
+
+<div class="produk mainan bg-white rounded-3xl border border-pink-100 shadow-md hover:shadow-xl transition p-3">
+
+  <div class="flex justify-between items-center mb-2">
+
+    <span class="bg-yellow-300 text-white text-[10px] md:text-xs px-2 py-1 rounded-full">
+      🎯 Hot Deal
+    </span>
+
+    <button onclick="toggleLove(this)"
+    class="text-xl text-pink-400">
+      🤍
+    </button>
+
+  </div>
+
+  <img src="images/mainan-kucing.webp"
+  class="w-full aspect-square object-contain">
+
+  <h3 class="font-semibold text-sm md:text-lg mt-2 text-gray-700">
+    Mainan Kucing Interaktif
+  </h3>
+
+  <div class="text-yellow-400 text-xs md:text-sm mt-1">
+    ⭐⭐⭐⭐⭐
+    <span class="text-gray-400">(340)</span>
+  </div>
+
+  <p class="hidden lg:block text-gray-500 text-sm mt-2">
+    Mainan seru untuk melatih insting dan aktivitas kucing agar tidak bosan.
+  </p>
+
+  <p class="text-pink-400 font-bold text-base md:text-2xl mt-2">
+    Rp55.000
+  </p>
+
+  <div class="flex gap-2 mt-3">
+
+    <button
+    onclick="addToCart('Mainan Kucing Interaktif',55000)"
+    class="flex-1 bg-pink-300 hover:bg-pink-400 text-white rounded-xl py-2 text-xs md:text-base">
+      🛒 <span class="hidden md:inline">Keranjang</span>
+    </button>
+
+    <button
+    onclick="beliSekarang('Mainan Kucing Interaktif',55000,'images/mainan-kucing.jpg')"
+    class="flex-1 bg-rose-100 hover:bg-rose-200 text-rose-600 rounded-xl py-2 text-xs md:text-base">
+      🛍️ <span class="hidden md:inline">Beli</span>
+    </button>
+
+  </div>
+
+</div>
+
+<!-- ================= PRODUK 5 ================= -->
+
+<div class="produk kesehatan bg-white rounded-3xl border border-pink-100 shadow-md hover:shadow-xl transition p-3">
+
+  <div class="flex justify-between items-center mb-2">
+
+    <span class="bg-green-300 text-white text-[10px] md:text-xs px-2 py-1 rounded-full">
+      💊 Health
+    </span>
+
+    <button onclick="toggleLove(this)" class="text-xl text-pink-400">
+      🤍
+    </button>
+
+  </div>
+
+  <img src="images/vitamin-kucing.jpg"
+  class="w-full aspect-square object-contain">
+
+  <h3 class="font-semibold text-sm md:text-lg mt-2 text-gray-700">
+    Vitamin Kucing
+  </h3>
+
+  <div class="text-yellow-400 text-xs md:text-sm mt-1">
+    ⭐⭐⭐⭐⭐ <span class="text-gray-400">(140)</span>
+  </div>
+
+  <p class="hidden lg:block text-gray-500 text-sm mt-2">
+    Vitamin untuk menjaga daya tahan tubuh dan kesehatan kucing agar tetap aktif.
+  </p>
+
+  <p class="text-pink-400 font-bold text-base md:text-2xl mt-2">
+    Rp50.000
+  </p>
+
+  <div class="flex gap-2 mt-3">
+
+    <button
+      onclick="addToCart('Vitamin Kucing',50000)"
+      class="flex-1 bg-pink-300 hover:bg-pink-400 text-white rounded-xl py-2 text-xs md:text-base">
+      🛒 <span class="hidden md:inline">Keranjang</span>
+    </button>
+
+    <button
+      onclick="beliSekarang('Vitamin Kucing',50000,'images/vitamin-kucing.jpg')"
+      class="flex-1 bg-rose-100 hover:bg-rose-200 text-rose-600 rounded-xl py-2 text-xs md:text-base">
+      🛍️ <span class="hidden md:inline">Beli</span>
+    </button>
+
+  </div>
+
+</div>
+
+   <!-- ================= PRODUK 6 ================= -->
+
+<div class="produk feeding bg-white rounded-3xl border border-pink-100 shadow-md hover:shadow-xl transition p-3">
+
+  <div class="flex justify-between items-center mb-2">
+
+    <span class="bg-sky-300 text-white text-[10px] md:text-xs px-2 py-1 rounded-full">
+      🥣 Feeding
+    </span>
+
+    <button onclick="toggleLove(this)" class="text-xl text-pink-400">
+      🤍
+    </button>
+
+  </div>
+
+  <img src="images/mangkuk-kucing.jpg"
+  class="w-full aspect-square object-contain">
+
+  <h3 class="font-semibold text-sm md:text-lg mt-2 text-gray-700">
+    Mangkuk Makan Kucing
+  </h3>
+
+  <div class="text-yellow-400 text-xs md:text-sm mt-1">
+    ⭐⭐⭐⭐⭐ <span class="text-gray-400">(115)</span>
+  </div>
+
+  <p class="hidden lg:block text-gray-500 text-sm mt-2">
+    Mangkuk makan kucing anti tumpah dengan desain lucu dan aman digunakan.
+  </p>
+
+  <p class="text-pink-400 font-bold text-base md:text-2xl mt-2">
+    Rp35.000
+  </p>
+
+  <div class="flex gap-2 mt-3">
+
+    <button
+      onclick="addToCart('Mangkuk Makan Kucing',35000)"
+      class="flex-1 bg-pink-300 hover:bg-pink-400 text-white rounded-xl py-2 text-xs md:text-base">
+      🛒 <span class="hidden md:inline">Keranjang</span>
+    </button>
+
+    <button
+      onclick="beliSekarang('Mangkuk Makan Kucing',35000,'images/mangkuk-kucing.jpg')"
+      class="flex-1 bg-rose-100 hover:bg-rose-200 text-rose-600 rounded-xl py-2 text-xs md:text-base">
+      🛍️ <span class="hidden md:inline">Beli</span>
+    </button>
+
+  </div>
+
+</div>  
+
+
+     <!-- ================= PRODUK 7 ================= -->
+
+<div class="produk perawatan bg-white rounded-3xl border border-pink-100 shadow-md hover:shadow-xl transition p-3">
+
+  <div class="flex justify-between items-center mb-2">
+
+    <span class="bg-sky-300 text-white text-[10px] md:text-xs px-2 py-1 rounded-full">
+      🧴 Care
+    </span>
+
+    <button onclick="toggleLove(this)" class="text-xl text-pink-400">
+      🤍
+    </button>
+
+  </div>
+
+  <img src="images/shampoo-kucing.jpg"
+  class="w-full aspect-square object-contain">
+
+  <h3 class="font-semibold text-sm md:text-lg mt-2 text-gray-700">
+    Shampoo Kucing
+  </h3>
+
+  <div class="text-yellow-400 text-xs md:text-sm mt-1">
+    ⭐⭐⭐⭐⭐ <span class="text-gray-400">(102)</span>
+  </div>
+
+  <p class="hidden lg:block text-gray-500 text-sm mt-2">
+    Shampoo lembut untuk membersihkan bulu kucing agar tetap bersih dan harum.
+  </p>
+
+  <p class="text-pink-400 font-bold text-base md:text-2xl mt-2">
+    Rp40.000
+  </p>
+
+  <div class="flex gap-2 mt-3">
+
+    <button
+      onclick="addToCart('Shampoo Kucing',40000)"
+      class="flex-1 bg-pink-300 hover:bg-pink-400 text-white rounded-xl py-2 text-xs md:text-base">
+      🛒 <span class="hidden md:inline">Keranjang</span>
+    </button>
+
+    <button
+      onclick="beliSekarang('Shampoo Kucing',40000,'images/shampoo-kucing.jpg')"
+      class="flex-1 bg-rose-100 hover:bg-rose-200 text-rose-600 rounded-xl py-2 text-xs md:text-base">
+      🛍️ <span class="hidden md:inline">Beli</span>
+    </button>
+
+  </div>
+
+</div>
+
+
+
+      <!-- ================= PRODUK 8 ================= -->
+
+<div class="produk makanan bg-white rounded-3xl border border-pink-100 shadow-md hover:shadow-xl transition p-3">
+
+  <!-- Badge -->
+  <div class="flex justify-between items-center mb-2">
+
+    <span class="bg-orange-300 text-white text-[10px] md:text-xs px-2 py-1 rounded-full">
+      😻 Favorite
+    </span>
+
+    <button onclick="toggleLove(this)"
+    class="text-xl text-pink-400">
+      🤍
+    </button>
+
+  </div>
+
+  <!-- Gambar -->
+  <img src="images/snack-kucing.jpg"
+  class="w-full aspect-square object-contain">
+
+  <!-- Nama -->
+  <h3 class="font-semibold text-sm md:text-lg mt-2 text-gray-700">
+    Snack Kucing
+  </h3>
+
+  <!-- Rating -->
+  <div class="text-yellow-400 text-xs md:text-sm mt-1">
+    ⭐⭐⭐⭐⭐
+    <span class="text-gray-400">(185)</span>
+  </div>
+
+  <!-- Deskripsi -->
+  <p class="hidden lg:block text-gray-500 text-sm mt-2">
+    Snack lezat dengan nutrisi tambahan yang cocok sebagai camilan atau hadiah untuk kucing kesayangan.
+  </p>
+
+  <!-- Harga -->
+  <p class="text-pink-400 font-bold text-base md:text-2xl mt-2">
+    Rp20.000
+  </p>
+
+  <!-- Tombol -->
+  <div class="flex gap-2 mt-3">
+
+    <button
+    onclick="addToCart('Snack Kucing',20000)"
+    class="flex-1 bg-pink-300 hover:bg-pink-400 text-white rounded-xl py-2 text-xs md:text-base">
+
+      🛒
+      <span class="hidden md:inline"> Keranjang</span>
+
+    </button>
+
+    <button
+    onclick="beliSekarang('Snack Kucing',20000,'images/snack-kucing.jpg')"
+    class="flex-1 bg-rose-100 hover:bg-rose-200 text-rose-600 rounded-xl py-2 text-xs md:text-base">
+
+      🛍️
+      <span class="hidden md:inline"> Beli</span>
+
+    </button>
+
+  </div>
+
+</div>
+
+<!-- ================= PRODUK 9 ================= -->
+
+<div class="produk perawatan bg-white rounded-3xl border border-pink-100 shadow-md hover:shadow-xl transition p-3">
+
+  <!-- Badge -->
+  <div class="flex justify-between items-center mb-2">
+
+    <span class="bg-blue-300 text-white text-[10px] md:text-xs px-2 py-1 rounded-full">
+      ✨ Grooming
+    </span>
+
+    <button onclick="toggleLove(this)"
+    class="text-xl text-pink-400">
+      🤍
+    </button>
+
+  </div>
+
+  <!-- Gambar -->
+  <img src="images/sisir-kucing.jpg"
+  class="w-full aspect-square object-contain">
+
+  <!-- Nama -->
+  <h3 class="font-semibold text-sm md:text-lg mt-2 text-gray-700">
+    Sisir Bulu Kucing
+  </h3>
+
+  <!-- Rating -->
+  <div class="text-yellow-400 text-xs md:text-sm mt-1">
+    ⭐⭐⭐⭐⭐
+    <span class="text-gray-400">(135)</span>
+  </div>
+
+  <!-- Deskripsi -->
+  <p class="hidden lg:block text-gray-500 text-sm mt-2">
+    Sisir bulu kucing dengan gagang yang nyaman digunakan untuk membantu mengurangi bulu rontok dan menjaga bulu tetap rapi.
+  </p>
+
+  <!-- Harga -->
+  <p class="text-pink-400 font-bold text-base md:text-2xl mt-2">
+    Rp30.000
+  </p>
+
+  <!-- Tombol -->
+  <div class="flex gap-2 mt-3">
+
+    <button
+    onclick="addToCart('Sisir Bulu Kucing',30000)"
+    class="flex-1 bg-pink-300 hover:bg-pink-400 text-white rounded-xl py-2 text-xs md:text-base">
+
+      🛒
+      <span class="hidden md:inline"> Keranjang</span>
+
+    </button>
+
+    <button
+    onclick="beliSekarang('Sisir Bulu Kucing',30000,'images/sisir-bulu-kucing.jpg')"
+    class="flex-1 bg-rose-100 hover:bg-rose-200 text-rose-600 rounded-xl py-2 text-xs md:text-base">
+
+      🛍️
+      <span class="hidden md:inline"> Beli</span>
+
+    </button>
+
+  </div>
+
+</div>
+
+
+
+<!-- ================= PRODUK 10 ================= -->
+
+<div class="produk kenyamanan bg-white rounded-3xl border border-pink-100 shadow-md hover:shadow-xl transition p-3">
+
+  <!-- Badge -->
+  <div class="flex justify-between items-center mb-2">
+
+    <span class="bg-pink-300 text-white text-[10px] md:text-xs px-2 py-1 rounded-full">
+      💤 Comfort
+    </span>
+
+    <button onclick="toggleLove(this)"
+    class="text-xl text-pink-400">
+      🤍
+    </button>
+
+  </div>
+
+  <!-- Gambar -->
+  <img src="images/tempat-tidur-kucing.jpg"
+  class="w-full aspect-square object-contain">
+
+  <!-- Nama -->
+  <h3 class="font-semibold text-sm md:text-lg mt-2 text-gray-700">
+    Tempat Tidur Kucing
+  </h3>
+
+  <!-- Rating -->
+  <div class="text-yellow-400 text-xs md:text-sm mt-1">
+    ⭐⭐⭐⭐⭐
+    <span class="text-gray-400">(210)</span>
+  </div>
+
+  <!-- Deskripsi -->
+  <p class="hidden lg:block text-gray-500 text-sm mt-2">
+    Tempat tidur empuk dan nyaman untuk membuat kucing tidur lebih tenang dan berkualitas.
+  </p>
+
+  <!-- Harga -->
+  <p class="text-pink-400 font-bold text-base md:text-2xl mt-2">
+    Rp85.000
+  </p>
+
+  <!-- Tombol -->
+  <div class="flex gap-2 mt-3">
+
+    <button
+    onclick="addToCart('Tempat Tidur Kucing',85000)"
+    class="flex-1 bg-pink-300 hover:bg-pink-400 text-white rounded-xl py-2 text-xs md:text-base">
+
+      🛒
+      <span class="hidden md:inline"> Keranjang</span>
+
+    </button>
+
+    <button
+    onclick="beliSekarang('Tempat Tidur Kucing',85000,'images/tempat-tidur-kucing.jpg')"
+    class="flex-1 bg-rose-100 hover:bg-rose-200 text-rose-600 rounded-xl py-2 text-xs md:text-base">
+
+      🛍️
+      <span class="hidden md:inline"> Beli</span>
+
+    </button>
+
+  </div>   <!-- tombol -->
+
+</div>     <!-- card produk 10 -->
+
+</div>     <!-- grid produk -->
+</section> <!-- section produk -->
+
+
+
+<!-- FOOTER MEOWMART -->
+<footer class="w-full bg-white border-t border-pink-100 mt-20">
+
+  <div class="max-w-7xl mx-auto px-6 py-14">
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+      <!-- LOGO / ABOUT -->
+      <div>
+        <h2 class="text-4xl font-bold text-pink-400">
+          🐱 MeowMart
+        </h2>
+
+        <p class="text-gray-600 mt-5 text-base leading-relaxed">
+          Semua kebutuhan kucing kesayanganmu tersedia di sini dengan kualitas terbaik, harga terjangkau, dan pengiriman cepat.
+        </p>
+      </div>
+
+      <!-- MENU -->
+      <div>
+        <h3 class="text-xl font-bold text-gray-800 mb-5">
+          Menu
+        </h3>
+
+        <ul class="space-y-4 text-gray-600 text-base">
+          <li><a href="index.html" class="hover:text-pink-400">🏠 Home</a></li>
+          <li><a href="#produk" class="hover:text-pink-400">🛍 Produk</a></li>
+          <li><a href="cart.html" class="hover:text-pink-400">🛒 Keranjang</a></li>
+        </ul>
+      </div>
+
+      <!-- KONTAK -->
+      <div>
+        <h3 class="text-xl font-bold text-gray-800 mb-5">
+          Hubungi Kami
+        </h3>
+
+        <div class="space-y-4 text-gray-600 text-base">
+
+          <p>📍 Bandung, Indonesia</p>
+
+          <p class="break-all">
+            📧 meowmart@gmail.com
+          </p>
+
+          <p>
+            📱 0812-3456-7890
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- GARIS -->
+    <hr class="my-10">
+
+    <!-- COPYRIGHT -->
+    <p class="text-center text-gray-400 text-sm">
+      © 2026 MeowMart | Dibuat dengan ❤️ oleh Natasha
+    </p>
+
+  </div>
+
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
