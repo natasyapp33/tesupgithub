@@ -26,7 +26,7 @@ body {
 }
 
 .register-box h2 {
-  color: #e89ab7; /* SOFT PINK FIX */
+  color: #e89ab7;
   margin-bottom: 20px;
 }
 
@@ -43,7 +43,7 @@ body {
 .register-box button {
   width: 100%;
   padding: 12px;
-  background: #e89ab7; /* SOFT PINK FIX */
+  background: #e89ab7;
   color: white;
   border: none;
   border-radius: 12px;
@@ -73,15 +73,37 @@ body {
 <div class="register-box">
   <h2>Create Account 💗</h2>
 
-  <input type="text" placeholder="Username">
-  <input type="email" placeholder="Email">
-  <input type="password" placeholder="Password">
-  <input type="password" placeholder="Confirm Password">
+  <input type="text" id="username" placeholder="Username">
+  <input type="email" id="email" placeholder="Email">
+  <input type="password" id="password" placeholder="Password">
+  <input type="password" id="confirm" placeholder="Confirm Password">
 
-  <button>Daftar</button>
+  <button type="button" onclick="register()">Daftar</button>
 
   <p>Sudah punya akun? <a href="login.html">Login</a></p>
 </div>
+
+<script>
+function register() {
+  let user = document.getElementById("username").value;
+  let email = document.getElementById("email").value;
+  let pass = document.getElementById("password").value;
+  let confirm = document.getElementById("confirm").value;
+
+  if (!user || !email || !pass || !confirm) {
+    alert("Semua harus diisi!");
+    return;
+  }
+
+  if (pass !== confirm) {
+    alert("Password tidak sama!");
+    return;
+  }
+
+  alert("Register berhasil 🎉");
+  window.location.href = "login.html";
+}
+</script>
 
 </body>
 </html>

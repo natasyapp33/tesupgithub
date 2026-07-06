@@ -1,140 +1,275 @@
-# 💗 PinkShop - E-Commerce Website
+# 🐱 CatShop - E-Commerce Website
 
-## 📌 Project Description
-PinkShop adalah website e-commerce sederhana dengan tema soft pink dan aesthetic yang terdiri dari landing page, katalog produk, sistem keranjang belanja (cart), checkout page, serta desain responsive.
-
-Website ini dibuat menggunakan HTML, CSS, dan JavaScript vanilla sebagai latihan pengembangan front-end dan simulasi sistem toko online sederhana.
+Website e-commerce sederhana yang menyediakan berbagai perlengkapan dan kebutuhan kucing. Project ini dikembangkan menggunakan **HTML5, CSS3, dan JavaScript** sebagai implementasi pembelajaran mata kuliah **Komputer Aplikasi IT II**.
 
 ---
 
-## 🎯 Business Overview
+# 📌 Project Description
 
-### 🏪 Nama Bisnis
-PinkShop
+CatShop merupakan website e-commerce yang dirancang untuk memudahkan pengguna dalam mencari dan membeli berbagai kebutuhan kucing secara online. Website ini memiliki tampilan yang sederhana, menarik, responsif, dan mudah digunakan.
 
-### 💡 Value Proposition
-PinkShop menawarkan pengalaman belanja online dengan tampilan aesthetic, user-friendly, dan sederhana sehingga nyaman digunakan oleh semua pengguna.
-
-### 🎯 Target Market
-- Remaja dan dewasa muda (15–30 tahun)
-- Pengguna yang menyukai produk aesthetic / lifestyle
-- Online shopper pemula
-
-### 📊 Analisis Pasar
-Tren e-commerce saat ini berfokus pada UI yang menarik, mobile-friendly, dan pengalaman pengguna yang cepat. PinkShop dibuat sebagai simulasi mini e-commerce untuk memahami konsep tersebut.
-
-### 🏆 Kompetitor
-- Shopee
-- Tokopedia
-- Lazada
-
-PinkShop berfokus pada simulasi UI sederhana, bukan skala marketplace besar.
-
-### 💰 Model Bisnis
-Simulasi penjualan produk dengan konsep direct purchase (tanpa backend).
-
-### 💸 Strategi Harga & Promosi
-- Harga dibuat sederhana dan terjangkau
-- Simulasi diskon sederhana (bisa dikembangkan)
-- Fokus pada visual produk
+Project ini dibuat sebagai simulasi website toko online sederhana dengan mengimplementasikan konsep front-end development menggunakan HTML, CSS, dan JavaScript. Selain menampilkan katalog produk, website juga dilengkapi dengan fitur login, registrasi, keranjang belanja, checkout, hingga halaman konfirmasi pesanan.
 
 ---
 
-## 🛒 Features
+# 🎯 Business Overview
 
-### 💻 Frontend Features
-- Landing page dengan hero section
-- Katalog produk (8–10 item)
-- Detail produk (simulasi modal/page)
-- Shopping cart (Add / Remove / Update quantity)
-- Checkout page (form input)
-- Footer lengkap
+CatShop bertujuan menjadi platform penjualan perlengkapan kucing yang menyediakan berbagai kebutuhan dalam satu website.
 
-### ⚙️ JavaScript Features
-- Add to Cart system
-- Update & Remove item dari cart
-- Total harga otomatis
-- localStorage untuk menyimpan cart
-- Validasi form checkout sederhana
-- Filter & search produk (optional)
-- Smooth scrolling & animation
+Melalui website ini pengguna dapat:
 
-### 📱 Responsive Design
-- Menggunakan media query
-- Tampilan optimal di desktop, tablet, dan mobile
-- Layout fleksibel menggunakan Flexbox/Grid
+- 🛍 Melihat katalog produk
+- ➕ Menambahkan produk ke keranjang
+- ✏ Mengubah jumlah produk
+- 🗑 Menghapus produk dari keranjang
+- 💳 Melakukan proses checkout
+- ✅ Mendapatkan konfirmasi pesanan
 
 ---
 
-## 🛠️ Technologies Used
-- HTML5
-- CSS3
-- JavaScript (Vanilla)
-- LocalStorage API
+# ✨ Features
+
+### 🏠 Landing Page
+- Tampilan awal website
+- Banner promosi
+- Navigasi menuju halaman utama
+
+### 🔐 Login
+- Form login pengguna
+- Validasi sederhana menggunakan JavaScript
+
+### 📝 Register
+- Form registrasi akun
+- Validasi data pengguna
+
+### 🛒 Product Catalog
+Menampilkan berbagai produk seperti:
+
+- 🍖 Makanan Kucing
+- 🎾 Mainan Kucing
+- 🦴 Snack Kucing
+- 🎀 Kalung Kucing
+- 🧴 Shampoo Kucing
+- 💊 Vitamin Kucing
+- 🪮 Sisir Kucing
+- 🪣 Pasir Kucing
+- 🛏 Tempat Tidur Kucing
+
+Setiap produk memiliki:
+- Gambar Produk
+- Nama Produk
+- Harga Produk
+- Tombol Add to Cart
+
+### 🛍 Shopping Cart
+- Menampilkan daftar produk
+- Mengubah jumlah produk
+- Menghapus produk
+- Menghitung total harga otomatis
+
+### 💳 Checkout
+- Form Nama
+- Nomor Telepon
+- Alamat
+- Metode Pembayaran
+
+### ✅ Success Page
+- Konfirmasi pesanan berhasil
+- Ucapan terima kasih
+- Tombol kembali ke Home
 
 ---
 
-## 📂 Project Structure
+# 🎨 User Interface
 
-project-ecommerce/
+Website menggunakan konsep desain:
+
+- 🌸 Soft Pink Theme
+- 📱 Responsive Design
+- 💖 Simple & Clean Layout
+- ✨ User Friendly Interface
+
+---
+
+# 🛠 Technologies Used
+
+| Technology | Description |
+|------------|-------------|
+| HTML5 | Struktur halaman website |
+| CSS3 | Styling dan responsive design |
+| JavaScript | Interaksi website |
+| Git & GitHub | Version Control dan Repository |
+
+---
+
+# 📂 Project Structure
+
+```
+CatShop/
+│
+├── README.md
 │
 ├── index.html
+├── landing.html
+├── login.html
+├── register.html
+├── cart.html
 ├── checkout.html
+├── success.html
 │
-├── css/
-│   └── style.css
+├── style.css
+├── script.js
 │
-├── js/
-│   └── main.js
-│
-├── images/
-│   └── (product images)
-│
-└── README.md
+├── cat.png
+├── kucing-banner.jpg
+├── makanan-kucing.jpg
+├── mainan-kucing.webp
+├── kalung-kucing.jpg
+├── shampoo-kucing.jpg
+├── sisir-kucing.jpg
+├── snack-kucing.jpg
+├── vitamin-kucing.jpg
+├── pasir-kucing.jpg
+├── tempat-tidur-kucing.jpg
+```
 
 ---
 
-## 🚀 How to Run Project
-1. Clone atau download repository ini
-2. Pastikan semua file dalam satu folder
-3. Buka file `index.html` di browser
-4. Website akan berjalan secara lokal
+# 🔄 Website Workflow
+
+```
+Landing Page
+      │
+      ▼
+Login / Register
+      │
+      ▼
+Home Page
+      │
+      ▼
+Product Catalog
+      │
+      ▼
+Add to Cart
+      │
+      ▼
+Shopping Cart
+      │
+      ▼
+Checkout
+      │
+      ▼
+Success Order
+```
 
 ---
 
-## 🌐 Deployment
-- GitHub Repository: *(tambahkan link kamu di sini)*
-- GitHub Pages: *(tambahkan link live website di sini)*
+# 📄 Website Pages
+
+| Page | Description |
+|------|-------------|
+| Landing | Halaman pembuka website |
+| Login | Halaman masuk pengguna |
+| Register | Halaman pendaftaran akun |
+| Home | Halaman utama |
+| Product | Menampilkan seluruh produk |
+| Cart | Keranjang belanja |
+| Checkout | Form pembayaran |
+| Success | Konfirmasi pesanan |
 
 ---
 
-## 📊 Analytics Plan (Simulasi)
-Website ini dapat dikembangkan dengan tracking:
-- Bounce rate (pengunjung keluar tanpa interaksi)
-- Conversion rate (klik add to cart → checkout)
-- Popular product tracking
-- User interaction flow
+# 📦 Products Available
+
+- 🍖 Cat Food
+- 🎾 Cat Toy
+- 🎀 Cat Collar
+- 🦴 Cat Snack
+- 🧴 Cat Shampoo
+- 💊 Cat Vitamin
+- 🪮 Cat Comb
+- 🪣 Cat Litter
+- 🛏 Cat Bed
 
 ---
 
-## 🔐 Checkout System
-Checkout pada website ini merupakan simulasi form yang berisi:
-- Nama pengguna
-- Alamat pengiriman
-- Metode pembayaran (dummy)
+# 🚀 Future Improvements
 
-Tidak menggunakan payment gateway asli.
+Pengembangan yang dapat dilakukan di masa mendatang:
+
+- 🔍 Search Product
+- 🗂 Product Categories
+- ❤️ Wishlist
+- 👤 User Profile
+- 🛒 Product Detail
+- 💳 Online Payment Gateway
+- 🛠 Admin Dashboard
+- 📦 Order History
+- ⭐ Product Rating & Review
+- 🌙 Dark Mode
+- 🗄 Database Integration (MySQL)
+- 🔐 Authentication menggunakan PHP/Laravel
 
 ---
 
-## 💡 Future Improvements
-- Integrasi backend (database + authentication)
-- Payment gateway asli (Midtrans / Stripe / PayPal)
-- Login system real user
-- Admin dashboard
-- Produk dinamis dari database
+# 📚 Learning Outcomes
+
+Melalui project ini dipelajari mengenai:
+
+- HTML Semantic
+- CSS Flexbox
+- CSS Grid
+- Responsive Web Design
+- JavaScript DOM
+- Event Handling
+- Local Storage
+- Form Validation
+- Shopping Cart Logic
+- Responsive Layout
+- Basic Front-End Development
 
 ---
 
-## 🎀 Conclusion
-PinkShop adalah project pembelajaran yang bertujuan untuk memahami konsep e-commerce frontend, UI/UX design, dan interaksi pengguna menggunakan JavaScript dasar.
+# 📸 Website Preview
+
+Berikut merupakan halaman-halaman yang tersedia pada website:
+
+- 🏠 Landing Page
+- 🔐 Login Page
+- 📝 Register Page
+- 🛍 Home Page
+- 📦 Product Catalog
+- 🛒 Shopping Cart
+- 💳 Checkout Page
+- ✅ Success Order Page
+
+> *(Screenshot halaman website dapat ditambahkan pada bagian ini apabila diperlukan.)*
+
+---
+
+# 👩‍💻 Author
+
+## Natasha Indah
+
+| Information | Details |
+|-------------|---------|
+| 👤 Nama | Natasha Indah |
+| 🆔 NIM | 209250143 |
+| 🎓 Program Studi | Administrasi Bisnis |
+| 👥 Kelas | ABI 6 |
+| 🏫 Universitas | International Women University |
+| 📚 Mata Kuliah | Komputer Aplikasi IT II |
+
+---
+
+## 📖 About This Project
+
+Project **CatShop – E-Commerce Website** dibuat sebagai **Tugas Ujian Akhir Semester (UAS)** mata kuliah **Komputer Aplikasi IT II**.
+
+Website ini merupakan implementasi pembelajaran mengenai pengembangan website front-end menggunakan **HTML5**, **CSS3**, dan **JavaScript**, dengan mengusung tema toko online perlengkapan kucing. Melalui project ini diterapkan konsep desain responsif, manipulasi DOM, validasi form, serta simulasi alur belanja online mulai dari login hingga checkout.
+
+---
+
+⭐ **Thank you for visiting this repository!**
+
+Semoga project ini dapat menjadi referensi pembelajaran dalam pengembangan website e-commerce sederhana menggunakan HTML, CSS, dan JavaScript.
