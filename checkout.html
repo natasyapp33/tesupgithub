@@ -449,17 +449,20 @@ hitungTotal();
 
 }
 
-document.getElementById("btnBayar").onclick=function(){
+document.getElementById("btnBayar").onclick = function () {
 
-this.innerHTML="⏳ Memproses Pembayaran...";
+    this.innerHTML = "⏳ Memproses Pembayaran...";
+    this.disabled = true;
 
-this.disabled=true;
+    setTimeout(() => {
 
-setTimeout(()=>{
+        // Menghapus data setelah pembayaran berhasil
+        localStorage.removeItem("cart");
+        localStorage.removeItem("checkout");
 
-window.location.href="success.html";
+        window.location.href = "success.html";
 
-},2000);
+    }, 2000);
 
 }
 
