@@ -345,38 +345,60 @@
 
 <script>
 
-const produk = JSON.parse(localStorage.getItem("checkout"));
+const checkoutProduk = JSON.parse(localStorage.getItem("checkout"));
+const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-let subtotal = 75000;
+let subtotal = 0;
+let html = "";
 
-if(produk){
+// Kalau dari tombol Beli Sekarang
+if (checkoutProduk) {
 
-    subtotal = produk.harga;
+    subtotal = checkoutProduk.harga;
 
-    document.getElementById("produk-checkout").innerHTML = `
-
+    html = `
     <div class="bg-pink-50 rounded-2xl p-5">
 
-        <img src="${produk.gambar}"
+        <img src="${checkoutProduk.gambar}"
         class="w-40 h-40 object-contain mx-auto mb-4">
 
         <h3 class="text-xl font-bold text-center">
-
-            ${produk.nama}
-
+            ${checkoutProduk.nama}
         </h3>
 
         <p class="text-center text-pink-500 font-bold mt-2">
-
-            Rp${produk.harga.toLocaleString("id-ID")}
-
+            Rp${checkoutProduk.harga.toLocaleString("id-ID")}
         </p>
 
     </div>
-
     `;
 
 }
+// Kalau dari Keranjang
+else if (cart.length > 0) {
+
+    cart.forEach(item => {
+
+        subtotal += item.harga * item.jumlah;
+
+        html += `
+        <div class="flex items-center gap-4 border-b pb-4 mb-4">
+
+            <div class="flex-1">
+                <h3 class="font-bold">${item.nama}</h3>
+                <p>Jumlah : ${item.jumlah}</p>
+                <p class="text-pink-500">
+                    Rp${(item.harga * item.jumlah).toLocaleString("id-ID")}
+                </p>
+            </div>
+
+        </div>
+        `;
+    });
+
+}
+
+document.getElementById("produk-checkout").innerHTML = html;
 
 const subtotalText=document.getElementById("subtotal");
 const ongkirText=document.getElementById("ongkir");
