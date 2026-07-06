@@ -853,5 +853,12 @@ Belanja Sekarang
 </footer>
 
 <script src="script.js"></script>
+
+<script>
+if (!localStorage.getItem("user")) {
+    window.location.href = "login.html";
+}
+</script>
+
 </body>
 </html>
